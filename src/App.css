@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #282828;
+}
+
+a {
+    text-decoration: none;
+    color: #282828;
+}
+
+/* user info */
+.user-info {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 5em 0;
+}
+
+.user-info img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* repositories */
+.list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list > li {
+    border-radius: 5px;
+}
+
+.list--repositories {
+    background-color: lightblue;
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: .5em 25px;
+}
+.list--repositories > li {
+    background-color: #f1f1f1;
+    margin: 1em 0;
+    padding: 1em 1.5em;
+}
+
+.list--repositories h2 {
+    font-weight: 700;
+    font-size: 1.65rem;
+}
+
+.list--languages {
+    color: white;
+    display: flex;
+    margin-top: 1.25em;
+}
+
+.list--languages > li {
+    margin-right: .5em;
+    background-color: #282828;
+    padding: .2em 1em;
+}
+
+.stargazers {
+    margin-top: .75em;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    padding-left: 42px;
+    font-size: 1.25rem;
+}
+
+.stargazers::after {
+    content: "";
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('./img/star-icon.svg');
+}
+
+

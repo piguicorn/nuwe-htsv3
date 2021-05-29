@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const Busqueda = ({passUsername, errorMessage}) => {
+const Login = ({passUsername, errorMessage}) => {
 
     const [username, setUsername] = useState('');
 
@@ -31,7 +31,7 @@ const Busqueda = ({passUsername, errorMessage}) => {
     );
 };
 
-export default Busqueda;
+export default Login;
 
 /*
  * Este componente guarda el valor introducido en el input 
