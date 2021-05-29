@@ -9,6 +9,11 @@
 body {
     font-family: 'Nunito', sans-serif;
     color: #282828;
+    background-color: lightblue;
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 a {
@@ -16,11 +21,85 @@ a {
     color: #282828;
 }
 
+/* screen login */
+.screen--login {
+    background-color: #f1f1f1;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    min-height: 100vh;
+    margin-top: 0;
+    justify-content: center;
+}
+
+.screen--login h1 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.login-error {
+    color: coral;
+}
+
+.screen--login label,
+.screen--login input {
+    display: block;
+}
+
+.screen--login input { 
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 1.25em;
+    margin-top: .5em;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #264653;
+    padding: 0 .65em;
+}
+
+.screen--login input[type="submit"] {
+    background-color: #282828;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f1f1f1;
+    cursor: pointer;
+ }
+
+ .screen--login input[type="submit"]:hover,
+ .screen--login a:hover {
+     opacity: .8;
+ }
+
+.screen--login form {
+    margin-top: 1.5em;
+}
+
+.screen--login a {
+    text-decoration: underline;
+    color: #264653;
+    font-weight: 700;
+}
+
 /* user info */
 .user-info {
     background-color: #f1f1f1;
     text-align: center;
-    padding: 5em 0;
+    padding: 2.65em 0;
+}
+
+.user-info h1 {
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    margin-top: .8em;
+}
+
+.user-info h1:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .user-info img {
@@ -28,6 +107,52 @@ a {
     max-width: 200px;
     height: auto;
     border-radius: 50%;
+    display:block;
+    margin: auto;
+}
+
+.user-info p {
+    font-size: 1.25rem;
+}
+
+.user-info span {
+    position: relative;
+    padding-left: 42px;
+    line-height: 32px;
+}
+
+.user-info span::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('./img/folder-icon.svg');
+    background-repeat:no-repeat;
+}
+
+.screen--profile > p {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    font-size: 1.3rem;
+}
+
+.screen__close-btn {
+    background-color: #f1f1f1;
+    padding: 25px;
+}
+
+.screen__close-btn a {
+    background-color: #c4c4c4;
+    border-radius: 5px;
+    padding: .5em 1em;
+}
+
+.screen__close-btn a:hover {
+    opacity: .8;
 }
 
 /* repositories */
@@ -41,11 +166,7 @@ a {
 }
 
 .list--repositories {
-    background-color: lightblue;
-    background: #a8ff78;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: .5em 25px;
+padding: .5em 25px;
 }
 .list--repositories > li {
     background-color: #f1f1f1;
@@ -61,10 +182,12 @@ a {
 .list--languages {
     color: white;
     display: flex;
+    flex-wrap: wrap;
     margin-top: 1.25em;
 }
 
 .list--languages > li {
+    margin: .25em 0;
     margin-right: .5em;
     background-color: #282828;
     padding: .2em 1em;
@@ -87,6 +210,28 @@ a {
     top: 0;
     left: 0;
     background-image: url('./img/star-icon.svg');
+    background-repeat:no-repeat;
 }
 
+@media (min-width: 768px) {
+    .list--repositories {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 1.5em;
+        max-width: 1000px;
+        margin: auto;
+    }
 
+    .list--repositories > li {
+        flex-grow: 1;
+    }
+
+    .screen--login {
+        margin: auto;
+        margin-top: 200px;
+        padding: 3em;
+        border-radius: 5px;
+        min-height: 0;
+    }
+}
